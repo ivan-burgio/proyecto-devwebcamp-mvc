@@ -1,0 +1,8 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+.auth {
+    @include m.contenedor;
+
+    
+}
