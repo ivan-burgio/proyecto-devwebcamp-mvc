@@ -1,0 +1,12 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.header {
+    min-height: 60rem;
+    background-image: 
+        url(../img/grafica.svg), 
+        url(../img/grafica.svg), 
+        linear-gradient(to right, rgba(v.$negro, 1), rgba(v.$negro, .5)),
+        image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x)
+    ;
+}
