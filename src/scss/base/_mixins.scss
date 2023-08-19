@@ -92,7 +92,7 @@
     }
 }
 
-@mixin menu-socila($color, $size) {
+@mixin menu-social($color, $size) {
     &__enlace {
         &::before {
             color: $color;
