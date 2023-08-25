@@ -75,4 +75,8 @@
             width: 100%;
         }
     }
+
+    &__listado {
+        @include m.tags;
+    }
 }
