@@ -9,11 +9,12 @@ use Intervention\Image\ImageManagerStatic as Image;
 class PonentesController {
 
     public static function index(Router $router) {
-
+        $ponentes = Ponente::all();
 
         // Render a la vista 
         $router->render('admin/ponentes/index', [
             'titulo' => 'Ponentes / Conferencistas',
+            'ponentes' => $ponentes,
         ]);
     }
 
