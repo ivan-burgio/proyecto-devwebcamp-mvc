@@ -50,7 +50,7 @@
     </div>
 
     <div class="formulario__campo">
-        <label for="imagen" class="formulario__label">imagen</label>
+        <label for="imagen" class="formulario__label">Imagen</label>
         <input 
             type="file" 
             class="formulario__input formulario__input--file"
@@ -58,6 +58,17 @@
             name="imagen"
         >
     </div>
+
+    <?php if(isset($ponente->imagen_actual)) {?>
+        <p class="formulario__texto">Imagen actual:</p>
+        <div class="formulario__imagen">
+            <picture>
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $ponente->imagen; ?>.webp" type="image/webp">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $ponente->imagen; ?>.png" type="image/png">
+                <img src="<?php echo $_ENV['HOST'] . '/img/speakers/' . $ponente->imagen; ?>.png" alt="Imagen ponente">
+            </picture>
+        </div>
+    <?php } ?>
 </fieldset>
 
 <fieldset class="formulario__fieldset">
