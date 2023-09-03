@@ -61,11 +61,14 @@ class PonentesController {
             }
         }
 
+        $redes = json_decode($ponente->redes);
+
         // Render a la vista 
         $router->render('admin/ponentes/crear', [
             'titulo' => 'Registrar Ponente',
             'alertas' => $alertas,
             'ponente' => $ponente,
+            'redes' => $redes,
         ]);
     }
 
@@ -89,11 +92,14 @@ class PonentesController {
 
         $ponente->imagen_actual = $ponente->imagen;
 
+        $redes = json_decode($ponente->redes);
+
         // Render a la vista 
         $router->render('admin/ponentes/editar', [
             'titulo' => 'Editar Ponente',
             'alertas' => $alertas,
             'ponente' => $ponente,
+            'redes' => $redes,
         ]);
     }
 }
