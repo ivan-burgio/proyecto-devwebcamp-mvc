@@ -9,6 +9,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 class PonentesController {
 
     public static function index(Router $router) {
+        if(!is_admin()) {
+            header('Location: /login');
+        }
+
         $ponentes = Ponente::all();
 
         // Render a la vista 
@@ -19,6 +23,10 @@ class PonentesController {
     }
 
     public static function crear(Router $router) {
+        if(!is_admin()) {
+            header('Location: /login');
+        }
+
         $alertas = [];
         $ponente = new Ponente;
 
@@ -73,6 +81,10 @@ class PonentesController {
     }
 
     public static function editar(Router $router) {
+        if(!is_admin()) {
+            header('Location: /login');
+        }
+
         $alertas = [];
         
         // Validar el ID
@@ -144,6 +156,10 @@ class PonentesController {
     }
 
     public static function eliminar() {
+        if(!is_admin()) {
+            header('Location: /login');
+        }
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
             $ponente = Ponente::find($id);
