@@ -10,7 +10,6 @@ use Intervention\Image\ImageManagerStatic as Image;
 class PonentesController {
 
     public static function index(Router $router) {
-
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
@@ -18,11 +17,8 @@ class PonentesController {
             header('Location: /admin/ponentes?page=1');
         }
 
-        debuguear($pagina_actual);
-
         $registros_por_pagina = 10;
-        $total = 10;
-
+        $total = Ponente::total();
         $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total);
         
         $ponentes = Ponente::all();
