@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use MVC\Router;
+use Model\Categoria;
 
 class EventosController {
 
@@ -25,10 +26,13 @@ class EventosController {
 
         $alertas = [];
 
+        $categorias = Categoria::all();
+
         // Render a la vista 
         $router->render('admin/eventos/crear', [
             'titulo' => 'Registrar Evento',
             'alertas' => $alertas,
+            'categorias' => $categorias,
         ]);
     }
 }
