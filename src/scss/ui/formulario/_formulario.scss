@@ -67,6 +67,11 @@
         }
     }
 
+    &__radio {
+        display: flex;
+        gap: 2rem;
+    }
+
     &__submit {
         @include m.boton(v.$azul, v.$blanco);
         width: auto;

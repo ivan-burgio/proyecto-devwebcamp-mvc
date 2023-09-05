@@ -414,6 +414,10 @@ h3 {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+.formulario__radio {
+  display: flex;
+  gap: 2rem;
+}
 .formulario__submit {
   background-color: #007df4;
   padding: 1.5rem 4rem;
