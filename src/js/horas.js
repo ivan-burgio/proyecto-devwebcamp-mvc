@@ -16,6 +16,26 @@
 
         function terminoBusqueda(e) {
             busqueda[e.taget.name] = e.taget.value;
+
+            if(Object.values(busqueda).includes('')) {
+                return;
+            }
+
+            buscarEventos();
+        }
+
+        async function buscarEventos() {
+            const {dia, categoria_id} = busqueda;
+            const url = `/api/eventos-horario?dia_id=${dia}&categoria_id=${categoria_id}`;
+
+            const resultado = await fetch(url);
+            const eventos = await resultado.json();
+
+            obtenerHorasDisponibles();
+        }
+
+        function obtenerHorasDisponibles() {
+
         }
     }
 })();
