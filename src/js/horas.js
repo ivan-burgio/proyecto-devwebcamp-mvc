@@ -32,10 +32,15 @@
             const resultado = await fetch(url);
             const eventos = await resultado.json();
 
-            obtenerHorasDisponibles();
+            obtenerHorasDisponibles(eventos);
         }
 
-        function obtenerHorasDisponibles() {
+        function obtenerHorasDisponibles(eventos) {
+            // Comprobar eventos ya tomados y quitar la variable de deshabilitado
+            const horasTomadas = eventos.map(evento => evento.hora_id);
+            const listadoHoras = document.querySelectorAll('#horas li');
+            const resultado = listadoHoras.filter(li => horasTomadas.includes(li.dataset.horaId));
+
             const horasDisponibles = document.querySelectorAll('#horas li');
             horasDisponibles.forEach(hora => hora.addEventListener('click', seleccionarHora));
         }
@@ -43,7 +48,7 @@
         function seleccionarHora(e) {
             // Deshabilitar la hora precia si hay un nuevo click
             const horaPrevia = document.querySelector('.horas__hora--seleccionada');
-            
+
             if(horaPrevia) {
                 horaPrevia.classList.remove('horas__hora--seleccionada');
             }
