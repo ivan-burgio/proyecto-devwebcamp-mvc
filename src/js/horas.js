@@ -52,8 +52,7 @@
             listadoHoras.forEach(li => li.classList.add('horas__hora--deshabilitada'))
 
             // Comprobar eventos ya tomados, y quitar la variable de deshabilitado
-            const horasTomadas = [];
-            eventos.forEach(evento => evento.forEach(evt => horasTomadas.push(evt.hora_id)));          
+            const horasTomadas = eventos.map( evento => evento.hora_id);            
             const listadoHorasArray = Array.from(listadoHoras);
 
             const resultado = listadoHorasArray.filter( li =>  !horasTomadas.includes(li.dataset.horaId) );
