@@ -61,7 +61,7 @@
     </div>
 
     <div id="horas" class="formulario__campo">
-        <label class="formulario__label">Seleccionar hora</label>
+        <label class="formulario__label">Seleccionar Hora</label>
 
         <ul id="horas" class="horas">
             <?php foreach($horas as $hora) { ?>
@@ -69,7 +69,7 @@
             <?php } ?>
         </ul>
 
-        <input type="hidden" name="hora_id" value="">
+        <input type="hidden" name="hora_id" value="<?php echo $evento->hora_id; ?>">
     </div>
 </fieldset>
 
