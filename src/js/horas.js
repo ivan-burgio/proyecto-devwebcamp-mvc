@@ -22,7 +22,8 @@
             inputHiddenHora.value = '';
             inputHiddenDia.value = '';
             
-            const horaPrevia = document.querySelector('.horas__hora--seleccionada')
+            const horaPrevia = document.querySelector('.horas__hora--seleccionada');
+            
             if(horaPrevia) {
                 horaPrevia.classList.remove('horas__hora--seleccionada')
             }
