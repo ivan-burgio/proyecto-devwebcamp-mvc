@@ -5,6 +5,8 @@
         let ponentes = [];
         let ponentesFiltrados = [];
 
+        const listadoPonentes = document.querySelector('#listado_ponentes');
+
         obtenerPonentes();
 
         ponentesInput.addEventListener('input', buscarPonentes);
@@ -36,6 +38,34 @@
                         return ponente;
                     }
                 })
+            } else {
+                ponentesFiltrados = [];
+            }
+
+            mostrarPonentes();
+        }
+
+        function mostrarPonentes() {
+            while(listadoPonentes.firstChild) {
+                listadoPonentes.removeChild(listadoPonentes.firstChild);
+            }
+
+            if(ponentesFiltrados.length > 0) {
+                ponentesFiltrados.forEach(ponente => {
+                    const ponenteHTML = document.createElement('li');
+                    ponenteHTML.classList.add('listado-ponentes__ponente');
+                    ponenteHTML.textContent = ponente.nombre;
+                    ponenteHTML.dataset.ponenteId = ponente.id;
+    
+                    // Añadir al DOM
+                    listadoPonentes.appendChild(ponenteHTML);
+                })
+            } else {
+                const noResultados = document.createElement('p');
+                noResultados.classList.add('listado-ponentes__no-resultado');
+                noResultados.textContent = 'No hay resultado para la busqueda';
+
+                listadoPonentes.appendChild(noResultados);
             }
         }
     }
