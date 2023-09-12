@@ -49,7 +49,7 @@ $router->get('/admin/eventos', [EventosController::class, 'index']);
 $router->get('/admin/eventos/crear', [EventosController::class, 'crear']);
 $router->post('/admin/eventos/crear', [EventosController::class, 'crear']);
 
-$router->get('/api/eventos-horarios', [APIEventos::class, 'index']);
+$router->get('/api/eventos-horario', [APIEventos::class, 'index']);
 
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
