@@ -23,7 +23,7 @@
             inputHiddenDia.value = '';
             
             const horaPrevia = document.querySelector('.horas__hora--seleccionada');
-            
+
             if(horaPrevia) {
                 horaPrevia.classList.remove('horas__hora--seleccionada')
             }
@@ -38,7 +38,6 @@
         async function buscarEventos() {
             const {dia, categoria_id} = busqueda;
             const url = `/api/eventos-horario?dia_id=${dia}&categoria_id=${categoria_id}`;
-
             const resultado = await fetch(url);
             const eventos = await resultado.json();
 
