@@ -6,6 +6,7 @@ use Model\Dia;
 use Model\Hora;
 use MVC\Router;
 use Model\Evento;
+use Model\Ponente;
 use Model\Categoria;
 use Classes\Paginacion;
 
@@ -31,6 +32,9 @@ class EventosController {
 
         foreach($eventos as $evento) {
             $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->dia = Dia::find($evento->dia_id);
+            $evento->hora = Hora::find($evento->hora_id);
+            $evento->ponente = Ponente::find($evento->ponente_id);
         }
 
         // Render a la vista 
