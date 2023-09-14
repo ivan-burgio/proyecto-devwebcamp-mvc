@@ -15,10 +15,24 @@ class EventosController {
             header('Location: /login');
         }
 
+        $pagina_actual = $_GET['page'];
+        $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
+
+        if(!$pagina_actual || $pagina_actual < 1) {
+            header('Location: /admin/eventos?page=1');
+        }
+
+        $por_pagina = 10;
+        $total = Evento::total();
+        $paginacion = new Paginacion($pagina_actual, $por_pagina, $total);
+
+        $eventos = Evento::paginar($por_pagina, $paginacion->offset());
 
         // Render a la vista 
         $router->render('admin/eventos/index', [
             'titulo' => 'Conferencias y Workshops',
+            'eventos' => $eventos,
+            'paginacion' => $paginacion->paginacion();
         ]);
     }
 
