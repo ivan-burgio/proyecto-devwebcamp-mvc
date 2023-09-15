@@ -41,7 +41,7 @@ class EventosController {
         $router->render('admin/eventos/index', [
             'titulo' => 'Conferencias y Workshops',
             'eventos' => $eventos,
-            'paginacion' => $paginacion->paginacion();
+            'paginacion' => $paginacion->paginacion(),
         ]);
     }
 
