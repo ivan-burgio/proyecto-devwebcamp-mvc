@@ -39,6 +39,7 @@ $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
 // Area de administración
 $router->get('/admin/dashboard', [DashboardController::class, 'index']);
 
+// Ponentes
 $router->get('/admin/ponentes', [PonentesController::class, 'index']);
 $router->get('/admin/ponentes/crear', [PonentesController::class, 'crear']);
 $router->post('/admin/ponentes/crear', [PonentesController::class, 'crear']);
@@ -46,9 +47,12 @@ $router->get('/admin/ponentes/editar', [PonentesController::class, 'editar']);
 $router->post('/admin/ponentes/editar', [PonentesController::class, 'editar']);
 $router->post('/admin/ponentes/eliminar', [PonentesController::class, 'eliminar']);
 
+// Eventos
 $router->get('/admin/eventos', [EventosController::class, 'index']);
 $router->get('/admin/eventos/crear', [EventosController::class, 'crear']);
 $router->post('/admin/eventos/crear', [EventosController::class, 'crear']);
+$router->get('/admin/eventos/editar', [EventosController::class, 'editar']);
+$router->post('/admin/eventos/editar', [EventosController::class, 'editar']);
 
 $router->get('/api/eventos-horario', [APIEventos::class, 'index']);
 $router->get('/api/ponentes', [APIPonentes::class, 'index']);
