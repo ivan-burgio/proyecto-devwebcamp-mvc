@@ -55,8 +55,6 @@
             const resultado = await fetch(url);
             const eventos = await resultado.json();
 
-            console.log(eventos);
-
             obtenerHorasDisponibles(eventos);
         }
 

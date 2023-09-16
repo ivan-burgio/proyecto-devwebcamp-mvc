@@ -12,7 +12,7 @@
         ponentesInput.addEventListener('input', buscarPonentes)
 
         if(ponenteHidden.value) {
-           (async() => {
+           (async () => {
                 const ponente = await obtenerPonente(ponenteHidden.value)
                 const {nombre, apellido} = ponente
 
@@ -22,7 +22,7 @@
                 ponenteDOM.textContent = `${nombre} ${apellido}`
 
                 listadoPonentes.appendChild(ponenteDOM)
-           })()
+           })();
         }
 
         async function obtenerPonentes() {
