@@ -10,6 +10,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 class PonentesController {
 
     public static function index(Router $router) {
+        if(!is_admin()) {
+            header('Location: /login');
+        }
+
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
@@ -48,6 +52,10 @@ class PonentesController {
         $ponente = new Ponente;
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(!is_admin()) {
+                header('Location: /login');
+            }
+            
             // Leer image
             if(!empty($_FILES['imagen']['tmp_name'])) {
                 $carpeta_imagenes = '../public/img/speakers';
@@ -124,6 +132,10 @@ class PonentesController {
         $redes = json_decode($ponente->redes);
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(!is_admin()) {
+                header('Location: /login');
+            }
+
             // Leer image
             if(!empty($_FILES['imagen']['tmp_name'])) {
                 $carpeta_imagenes = '../public/img/speakers';
@@ -173,11 +185,11 @@ class PonentesController {
     }
 
     public static function eliminar() {
-        if(!is_admin()) {
-            header('Location: /login');
-        }
-        
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(!is_admin()) {
+                header('Location: /login');
+            }
+
             $id = $_POST['id'];
             $ponente = Ponente::find($id);
 
