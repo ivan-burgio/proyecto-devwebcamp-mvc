@@ -97,10 +97,9 @@ class PaginasController {
             }
         }
 
-
         $router->render('paginas/conferencias', [
             'titulo' => 'Conferencias & Workshops',
-            'eventos' => $eventos_formateados
+            'eventos' => $eventos_formateados,
         ]);
     }
 
