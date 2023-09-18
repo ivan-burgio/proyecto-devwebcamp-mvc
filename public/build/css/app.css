@@ -567,7 +567,7 @@ h3 {
   transition: 300ms background-color ease;
 }
 .evento__informacion:hover {
-  background-color: #0056a8;
+  background-color: #0063c1;
 }
 .evento__nombre {
   font-size: 2rem;

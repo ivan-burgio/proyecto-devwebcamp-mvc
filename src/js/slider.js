@@ -1,6 +1,11 @@
+// import Swiper JS
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+// import Swiper styles
 import 'swiper/css';
+// core version + navigation, pagination modules:
+import { Navigation,} from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css/navigation';
 
 
 document.addEventListener('DOMContentLoaded', function() {

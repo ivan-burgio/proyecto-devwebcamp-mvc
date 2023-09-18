@@ -51,7 +51,7 @@
         color: v.$blanco;
         transition: 300ms background-color ease;
         &:hover {
-            background-color: darken(v.$azul, 15%);
+            background-color: darken(v.$azul, 10%);
         }
     }
 
