@@ -1,6 +1,6 @@
 # 8° Proyecto - DevWebCamp
 Construido con Model View Controller.
 
-Utilizando PHP 8, JS, MySQL, SASS.
+Utilizando HTML, CSS, SASS, PHP 8, JS, MySQL, Gulp.JS y WebPack.
 
-El Deployment del proyecto todavia no esta disponible
+El Deployment del proyecto no estara disponible
