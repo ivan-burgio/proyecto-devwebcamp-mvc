@@ -50,11 +50,11 @@ class RegistroController {
             }
 
             // Verificar si el usuario ya esta registrado
-            /*$registro = Registro::where('usuario_id', $_SESSION['id']);
+            $registro = Registro::where('usuario_id', $_SESSION['id']);
             if(isset($registro) && $registro->paquete_id === "3") {
                 header('Location: /boleto?id=' . urlencode($registro->token));
                 return;
-            }*/
+            }
 
             $token = substr( md5(uniqid( rand(), true )), 0, 8);
             
@@ -103,7 +103,7 @@ class RegistroController {
         ]);
     }
 
-/*
+
     public static function pagar(Router $router) {
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -136,9 +136,7 @@ class RegistroController {
 
         }
     }
-
-
-
+/*
     public static function conferencias(Router $router) {
 
         if(!is_auth()) {
