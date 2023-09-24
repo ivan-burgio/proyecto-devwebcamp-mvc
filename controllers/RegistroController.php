@@ -18,7 +18,7 @@ class RegistroController {
 
     public static function crear(Router $router) {
 
-        /*if(!is_auth()) {
+        if(!is_auth()) {
             header('Location: /');
             return;
         }
@@ -34,7 +34,7 @@ class RegistroController {
         if(isset($registro) && $registro->paquete_id === "1") {
             header('Location: /finalizar-registro/conferencias');
             return;
-        }*/
+        }
 
         $router->render('registro/crear', [
             'titulo' => 'Finalizar Registro'
