@@ -809,11 +809,11 @@ h3 {
   top: calc(50% - 2.5rem);
 }
 .boleto::before {
-  clip-path: circle(50% at 25% 50%);
+  clip-path: circle(50% at 35% 50%);
   left: 0;
 }
 .boleto::after {
-  clip-path: circle(50% at 75% 50%);
+  clip-path: circle(50% at 65% 50%);
   right: 0;
 }
 .boleto--presencial {

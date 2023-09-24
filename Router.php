@@ -48,7 +48,7 @@ class Router
 
         $contenido = ob_get_clean(); // Limpia el Buffer
 
-        // Utilizar el Layout de acuerdo a la url
+        // Utilizar el Layout de acuerdo a la URL
         $url_actual = $_SERVER['PATH_INFO'] ?? '/';
 
         if(str_contains($url_actual, '/admin')) {
@@ -56,6 +56,5 @@ class Router
         } else {
             include_once __DIR__ . '/views/layout.php';
         }
-
     }
 }
