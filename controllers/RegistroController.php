@@ -136,7 +136,7 @@ class RegistroController {
 
         }
     }
-/*
+
     public static function conferencias(Router $router) {
 
         if(!is_auth()) {
@@ -158,11 +158,11 @@ class RegistroController {
             return;
         }
 
-        // Redireccionar a boleto virtual en caso de haber finalizado su registro
-        // if(isset($registro->regalo_id) && $registro->paquete_id === "1") {
-        //     header('Location: /boleto?id=' . urlencode($registro->token));
-        //     return;
-        // }
+        /*// Redireccionar a boleto virtual en caso de haber finalizado su registro
+        if(isset($registro->regalo_id) && $registro->paquete_id === "1") {
+            header('Location: /boleto?id=' . urlencode($registro->token));
+            return;
+        }*/
 
         $eventos = Evento::ordenar('hora_id', 'ASC');
 
@@ -262,5 +262,5 @@ class RegistroController {
             'eventos' => $eventos_formateados,
             'regalos' => $regalos
         ]);
-    }*/
+    }
 }
