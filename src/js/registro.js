@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 (function(){
     let eventos = [];
@@ -36,11 +36,11 @@ import Swal from 'sweetalert2'
         }
 
         function mostrarEventos() {
-            // LIMPIAR EL HTML
+            // Limpiar el html
             limpiarEventos();
 
             if(eventos.length > 0 ) {
-                eventos.forEach( evento => {
+                eventos.forEach(evento => {
                     const eventoDOM = document.createElement('DIV')
                     eventoDOM.classList.add('registro__evento')
 
@@ -54,7 +54,6 @@ import Swal from 'sweetalert2'
                     botonEliminar.onclick = function() {
                         eliminarEvento(evento.id)
                     }
-
 
                     // renderizar en el html
                     eventoDOM.appendChild(titulo)
@@ -70,7 +69,7 @@ import Swal from 'sweetalert2'
         }
 
         function eliminarEvento(id) {
-            eventos = eventos.filter( evento => evento.id !== id)
+            eventos = eventos.filter(evento => evento.id !== id)
             const botonAgregar = document.querySelector(`[data-id="${id}"]`)
             botonAgregar.disabled = false
             mostrarEventos();
@@ -82,7 +81,7 @@ import Swal from 'sweetalert2'
             }
         }
 
-        async function submitFormulario(e) {
+        /*async function submitFormulario(e) {
             e.preventDefault();
 
             // Obtener el regalo
@@ -127,8 +126,6 @@ import Swal from 'sweetalert2'
                     confirmButtonText: 'OK'
                 }).then( () => location.reload() )
             }
-
-        }
-
+        }*/
     }
 })();
