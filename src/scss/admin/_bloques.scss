@@ -21,16 +21,16 @@
     border-radius: 1rem;
 
     &:nth-child(1) {
-       @include m.bg-gradient(#F97316);
+       @include m.bg-gradient(#4b38f7);
     }
     &:nth-child(2) {
-        @include m.bg-gradient(#A855F7);
+        @include m.bg-gradient(#2cd4be);
     }
     &:nth-child(3) {
-        @include m.bg-gradient(#59910b);
+        @include m.bg-gradient(#b26df3);
     }
      &:nth-child(4) {
-        @include m.bg-gradient(#17769E);
+        @include m.bg-gradient(#ea5ff7);
      }
     &__heading {
         margin: 1rem 0 2rem 0;
