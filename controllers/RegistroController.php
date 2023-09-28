@@ -26,7 +26,7 @@ class RegistroController {
         // Verificar si el usuario ya esta registrado
         $registro = Registro::where('usuario_id', $_SESSION['id']);
 
-        if(isset($registro) && ($registro->paquete_id === "3" || $registro->paquete_id === "2" )) {
+        if(isset($registro) && ($registro->paquete_id === "3" || $registro->paquete_id === "2")) {
             header('Location: /boleto?id=' . urlencode($registro->token));
             return;
         }
@@ -73,7 +73,6 @@ class RegistroController {
                 header('Location: /boleto?id=' . urlencode($registro->token));
                 return;
             }
-
         }
     }
 
@@ -87,12 +86,13 @@ class RegistroController {
             return;
         }
 
-        // buscarlo en la BD
+        // Buscarlo en la BD
         $registro = Registro::where('token', $id);
         if(!$registro) {
             header('Location: /');
             return;
         }
+
         // Llenar las tablas de referencia
         $registro->usuario = Usuario::find($registro->usuario_id);
         $registro->paquete = Paquete::find($registro->paquete_id);
@@ -133,7 +133,6 @@ class RegistroController {
                     'resultado' => 'error'
                 ]);
             }
-
         }
     }
 
@@ -214,6 +213,7 @@ class RegistroController {
             }
 
             $eventos_array = [];
+            
             // Validar la disponibilidad de los eventos seleccionados
             foreach($eventos as $evento_id) {
                 $evento = Evento::find($evento_id);
