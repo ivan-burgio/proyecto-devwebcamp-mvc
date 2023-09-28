@@ -1,4 +1,5 @@
-import Swal from 'sweetalert2';
+// import Swiper JS
+import Swiper from 'swiper';
 
 (function(){
     let eventos = [];
@@ -81,11 +82,11 @@ import Swal from 'sweetalert2';
             }
         }
 
-        /*async function submitFormulario(e) {
+        async function submitFormulario(e) {
             e.preventDefault();
 
             // Obtener el regalo
-            const regaloId = document.querySelector('#regalo').value
+            /*const regaloId = document.querySelector('#regalo').value
             const eventosId = eventos.map(evento => evento.id)
 
             if(eventosId.length === 0 || regaloId === '') {
@@ -125,7 +126,7 @@ import Swal from 'sweetalert2';
                     icon: 'error',
                     confirmButtonText: 'OK'
                 }).then( () => location.reload() )
-            }
-        }*/
+            }*/
+        }
     }
 })();
