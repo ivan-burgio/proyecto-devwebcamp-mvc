@@ -194,7 +194,6 @@ class RegistroController {
 
         // Manejando el registro mediante $_POST
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             // Revisar que el usuario este autenticado
             if(!is_auth()) {
                 header('Location: /login');

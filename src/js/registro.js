@@ -98,7 +98,7 @@ import Swal from 'sweetalert2';
                 })
                 return;
             }
-            /*
+            
             // Objeto de formdata
             const datos = new FormData();
             datos.append('eventos', eventosId)
@@ -124,7 +124,7 @@ import Swal from 'sweetalert2';
                     icon: 'error',
                     confirmButtonText: 'OK'
                 }).then( () => location.reload() )
-            }*/
+            }
         }
     }
 })();
