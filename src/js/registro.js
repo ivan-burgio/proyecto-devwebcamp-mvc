@@ -1,5 +1,5 @@
 // import Swiper JS
-import Swiper from 'swiper';
+import Swal from 'sweetalert2';
 
 (function(){
     let eventos = [];
@@ -86,7 +86,7 @@ import Swiper from 'swiper';
             e.preventDefault();
 
             // Obtener el regalo
-            /*const regaloId = document.querySelector('#regalo').value
+            const regaloId = document.querySelector('#regalo').value
             const eventosId = eventos.map(evento => evento.id)
 
             if(eventosId.length === 0 || regaloId === '') {
@@ -98,7 +98,7 @@ import Swiper from 'swiper';
                 })
                 return;
             }
-
+            /*
             // Objeto de formdata
             const datos = new FormData();
             datos.append('eventos', eventosId)
@@ -110,8 +110,6 @@ import Swiper from 'swiper';
                 body: datos
             })
             const resultado = await respuesta.json();
-
-            console.log(resultado)
 
             if(resultado.resultado) {
                 Swal.fire(

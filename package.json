@@ -28,8 +28,11 @@
     "gulp-webp": "^4.0.1",
     "sass": "^1.41.1",
     "style-loader": "^3.3.3",
+    "swiper": "^10.2.0",
     "terser": "^5.14.2",
-    "webpack-stream": "^7.0.0",
-    "swiper": "^10.2.0"
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.7.31"
   }
 }
